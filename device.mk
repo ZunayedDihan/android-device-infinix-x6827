@@ -148,10 +148,6 @@ DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
     $(LOCAL_PATH)/overlay-aosp
 
-# Remove Unwanted Packages
-PRODUCT_PACKAGES += \
-    RemovePackages
-
 # Runtime Resource Overlays
 PRODUCT_PACKAGES += \
     FrameworksResOverlayFleur \
@@ -206,13 +202,6 @@ PRODUCT_BOOT_JARS += \
     mediatek-telecom-common \
     mediatek-telephony-base \
     mediatek-telephony-common
-
-# TextClassifier
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/textclassifier/actions_suggestions.universal.model:$(TARGET_COPY_OUT_SYSTEM)/etc/textclassifier/actions_suggestions.universal.model \
-    $(LOCAL_PATH)/textclassifier/textclassifier.en.model:$(TARGET_COPY_OUT_SYSTEM)/etc/textclassifier/textclassifier.en.model \
-    $(LOCAL_PATH)/textclassifier/lang_id.model:$(TARGET_COPY_OUT_SYSTEM)/etc/textclassifier/lang_id.model \
-    $(LOCAL_PATH)/textclassifier/textclassifier.universal.model:$(TARGET_COPY_OUT_SYSTEM)/etc/textclassifier/textclassifier.universal.model
 
 # VNDK
 PRODUCT_TARGET_VNDK_VERSION := 31
