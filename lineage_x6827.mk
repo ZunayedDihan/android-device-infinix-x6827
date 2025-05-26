@@ -12,10 +12,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # Inherit from FULL-64 device
-$(call inherit-product, device/infinix/FULL-64/device.mk)
+$(call inherit-product, device/infinix/x6827/device.mk)
 
-PRODUCT_DEVICE := FULL-64
-PRODUCT_NAME := lineage_FULL-64
+PRODUCT_DEVICE := x6827
+PRODUCT_NAME := lineage_x6827
 PRODUCT_BRAND := Infinix
 PRODUCT_MANUFACTURER := infinix
 
