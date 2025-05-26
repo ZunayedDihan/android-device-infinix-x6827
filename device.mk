@@ -95,5 +95,3 @@ PRODUCT_COPY_FILES += \
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
-# Inherit the proprietary files
-$(call inherit-product, vendor/infinix/x6827/x6827-vendor.mk)

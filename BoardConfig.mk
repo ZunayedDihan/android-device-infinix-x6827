@@ -102,5 +102,11 @@ BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
 # VINTF
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
 
-# Inherit the proprietary files
-include vendor/infinix/x6827/BoardConfigVendor.mk
+# Prebuilt vendor
+BOARD_PREBUILT_VENDORIMAGE := device/infinix/x6827/prebuilts/vendor.img
+TARGET_COPY_OUT_VENDOR := vendor
+
+# Copy Out
+TARGET_COPY_OUT_VENDOR := vendor
+TARGET_COPY_OUT_PRODUCT := product
+TARGET_COPY_OUT_SYSTEM_EXT := system_ext
