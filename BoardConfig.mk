@@ -95,9 +95,22 @@ TARGET_USERIMAGES_USE_F2FS := true
 # Security patch level
 VENDOR_SECURITY_PATCH := 2024-09-05
 
-# Verified Boot
+# Android Verified Boot
 BOARD_AVB_ENABLE := true
-BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
+BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3 # allows disable-verity and disable-verification
+
+# These are common settings, adjust paths/algorithms if your device requires something different
+BOARD_AVB_ALGORITHM := SHA256_RSA4096
+BOARD_AVB_HASH_ALGORITHM := SHA256
+BOARD_AVB_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_LEVEL)
+BOARD_AVB_ROLLBACK_INDEX_LOCATION := 1
+
+# If your device needs a separate vbmeta_system partition
+BOARD_AVB_VBMETA_SYSTEM_ENABLE := true
+BOARD_AVB_VBMETA_SYSTEM_KEY_PATH := build/make/target/product/security/platform.key
+BOARD_AVB_VBMETA_SYSTEM_ALGORITHM := SHA256_RSA4096
+BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_LEVEL)
+BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX_LOCATION := 1
 
 # VINTF
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
